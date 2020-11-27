@@ -1,18 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="./assets/images/logo.png">
+     <HelloWorld v-modal="imgList" @saveList="saveList" :value="imgList">
+       <span style="color:blue">上传图片</span>
+     </HelloWorld>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// 这个helloworld是a.vue
+import HelloWorld from './views/HelloWorld.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+  },
+    data() {
+    return {
+      imgList:['https://wpimg.wallstcn.com/577965b9-bb9e-4e02-9f0c-095b41417191']
+    }
+  },
+  methods: {
+    saveList(vaule){
+      console.log('提交图片',vaule)
+    }
   }
+
+
 }
 </script>
 
