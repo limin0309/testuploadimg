@@ -1,32 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/images/logo.png">
-     <HelloWorld v-modal="imgList" @saveList="saveList" :value="imgList">
-       <span style="color:blue">上传图片</span>
-     </HelloWorld>
+    <img alt="Vue logo" src="./assets/images/logo.png" />
+    <HelloWorld v-modal="imgList" @saveList="saveList" :value="imgList">
+      <span style="color: blue">上传图片</span>
+    </HelloWorld>
+
+    <!-- <el-aside>
+       swdwdw
+     </el-aside>
+
+     <el-page-header @back="goBack" content="详情页面">
+</el-page-header> -->
+
+    <basicForm></basicForm>
   </div>
 </template>
 <script>
 // 这个helloworld是a.vue
-import HelloWorld from './views/HelloWorld.vue'
+import HelloWorld from './views/HelloWorld.vue';
+import basicForm from './views/basicForm.vue';
+
 export default {
   name: 'App',
   components: {
     HelloWorld,
+    basicForm,
   },
-    data() {
+  data() {
     return {
-      imgList:['https://wpimg.wallstcn.com/577965b9-bb9e-4e02-9f0c-095b41417191']
-    }
+      imgList: [
+        'https://wpimg.wallstcn.com/577965b9-bb9e-4e02-9f0c-095b41417191',
+      ],
+    };
   },
   methods: {
-    saveList(vaule){
-      console.log('提交图片',vaule)
-    }
-  }
-
-
-}
+    saveList(vaule) {
+      console.log('提交图片', vaule);
+    },
+  },
+};
 </script>
 
 <style>
